@@ -4,9 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tic Tac Toe</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
-    <header>
+    <header id="main-header">
       <h1>Play Tic, Tac, Toe</h1>
       <p>Built with html, css, javascript and - of course - lots of love</p>
     </header>
@@ -15,14 +20,15 @@
          was created after the game-configuration section -->
 
       <aside>
+        <h2>Choose Your Player Name</h2>
         <form>
           <div>
             <label for="playername">Player Name</label>
             <input type="text" name="playername" id="playername" />
           </div>
           <div>
-            <button type="button">Cancel</button>
-            <button type="submit">Submit</button>
+            <button type="button" class="btn btn-alt">Cancel</button>
+            <button type="submit" class="btn">Submit</button>
           </div>
         </form>
       </aside>
@@ -37,7 +43,7 @@
               <!-- player symbol -->
               <p>X</p>
               <!-- these buttons with no type will be overwritten by js -->
-              <button>Edit</button>
+              <button class="btn btn-alt">Edit</button>
             </article>
           </li>
           <li>
@@ -47,11 +53,11 @@
               <h3>PLAYER NAME</h3>
               <!-- player symbol -->
               <p>O</p>
-              <button>Edit</button>
+              <button class="btn btn-alt">Edit</button>
             </article>
           </li>
         </ol>
-        <button>Start New Game</button>
+        <button class="btn">Start New Game</button>
       </section>
 
       <section id="active-game">
