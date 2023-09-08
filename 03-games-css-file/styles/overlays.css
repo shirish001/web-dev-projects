@@ -1,0 +1,40 @@
+/* for styling how the backdrop and modal overlay should be when they pop up */
+
+.modal {
+  position: fixed; /* so that the overlay stays fixed wherever we fix it */
+
+  /* here viewport would be the browser window */
+
+  top: 20%; /* fix it 20% from the top */
+  left: 5%; /* fix it 5% from the left and 90% is width so automatically 5% from right as well */
+  width: 90%;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box; /* right side is cut off due to 2x 1rem padding applied in mobile view */
+  display: none;
+}
+
+#backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+}
+
+/* backdrop will not cover the the modal overlay bc out of normal document flow elements that appear later in the HTML markup
+ will be positioned on top of elements that appear earlier. */
+
+@media (min-width: 48rem) {
+  .modal {
+    left: calc(50% - 20rem);
+    /* built in css function width is 40rem so subtracting 20 rem from
+     left half 50% and then automatically the right 20 rem gets subtracted from right 50 centering 
+     the modal overlay... */
+    width: 40rem;
+  }
+}
