@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/overlays.css" />
+    <link rel="stylesheet" href="styles/configuration.css" />
+    <link rel="stylesheet" href="styles/game.css" />
+
+    <!-- js files are added in order, the files where func are defined are attached first so that they get globally
+declared before they are used in the loaded page -->
+
+    <script src="scripts/config.js " defer></script>
+    <script src="scripts/game.js " defer></script>
+    <script src="scripts/app.js " defer></script>
+  </head>
+  <body>
+    <!-- its added so that we cannot interact with the main page content whilst the modal overlay is open -->
+    <div id="backdrop"></div>
+
+    <header id="main-header">
+      <h1>Play Tic, Tac, Toe</h1>
+      <p>Built with html, css, javascript and - of course - lots of love</p>
+    </header>
+    <main>
+      <!-- this aside element will contain the pop up overlay for storing player name,
+         was created after the game-configuration section -->
+
+      <aside class="modal" id="config-overlay">
+        <h2>Choose Your Player Name</h2>
+        <form>
+          <div class="form-control">
+            <label for="playername">Player Name</label>
+            <input type="text" name="playername" id="playername" required />
+          </div>
+          <p id="invalid-alert"></p>
+          <!--added here during js manipulation   -->
+          <div>
+            <button type="reset" class="btn btn-alt" id="cancel-overlay-btn">
+              Cancel
+            </button>
+            <button type="submit" class="btn">Submit</button>
+          </div>
+        </form>
+      </aside>
+
+      <section id="game-configuration">
+        <ol>
+          <li>
+            <article id="player-1-data">
+              <h2>player 1</h2>
+              <!-- this PLAYER NAME WILL ACT AS A PLACEHOLDER FOR THE ACTUAL NAME OF THE USER -->
+              <h3>PLAYER NAME</h3>
+              <!-- player symbol -->
+              <p class="player-symbol">X</p>
+              <!-- these buttons with no type will be overwritten by js -->
+              <button
+                class="btn btn-alt"
+                id="edit-1-player-btn"
+                data-playerid="1"
+              >
+                Edit
+              </button>
+            </article>
+          </li>
+          <li>
+            <article id="player-2-data">
+              <h2>player 2</h2>
+              <!-- this PLAYER NAME WILL ACT AS A PLACEHOLDER FOR THE ACTUAL NAME OF THE USER -->
+              <h3>PLAYER NAME</h3>
+              <!-- player symbol -->
+              <p class="player-symbol">O</p>
+              <button
+                class="btn btn-alt"
+                id="edit-2-player-btn"
+                data-playerid="2"
+              >
+                Edit
+              </button>
+            </article>
+          </li>
+        </ol>
+        <button class="btn" id="start-new-game">Start New Game</button>
+      </section>
+
+      <section id="active-game">
+        <article id="game-over">
+          <h2>You won, <span id="winner-name">PLAYER NAME</span></h2>
+          <p>Click "Start New Game" above, to start a new game!</p>
+        </article>
+        <p>It's your turn, <span id="active-player-name">PLAYER NAME</span>!</p>
+        <ol id="game-board">
+          <!-- these li items will the boxes of the game -->
+
+          <li data-row="0" data-col="0"></li>
+          <li data-row="0" data-col="1"></li>
+          <li data-row="0" data-col="2"></li>
+
+          <li data-row="1" data-col="0"></li>
+          <li data-row="1" data-col="1"></li>
+          <li data-row="1" data-col="2"></li>
+
+          <li data-row="2" data-col="0"></li>
+          <li data-row="2" data-col="1"></li>
+          <li data-row="2" data-col="2"></li>
+        </ol>
+      </section>
+    </main>
+  </body>
+</html>
