@@ -96,7 +96,7 @@ function checkForGameOver() {
   }
 
   if (currentRound === 9) {
-    return -1; // after all rounds gets over and its a draw
+    return -1; // after all rounds gets over and its a draw and not a win
   }
 
   return 0; // if we still have rounds left and dont have a winner and game is still going on
