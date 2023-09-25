@@ -1,5 +1,5 @@
 #hero {
-  background-image: url("/images/ocean/ocean.jpg");
+  background-image: url("images/ocean/ocean.jpg");
   height: 800px; /* use this to set the size of picture as required */
   background-position: center; /* to position the image in center  */
   background-size: cover; /* to get the full image proportionally */
