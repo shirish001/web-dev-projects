@@ -1,0 +1,105 @@
+#hero {
+  background-image: url("/images/ocean/ocean.jpg");
+  height: 800px; /* use this to set the size of picture as required */
+  background-position: center; /* to position the image in center  */
+  background-size: cover; /* to get the full image proportionally */
+}
+
+#hero-content {
+  width: 900px;
+  text-align: center;
+  background-color: rgba(51, 47, 47, 0.8);
+  padding: 50px 0;
+  margin: 0 auto;
+  box-shadow: 2px 4px 8px rgb(68, 67, 67);
+  border-radius: 8px;
+  position: relative; /* Creates a new positioning way for the element without taking the element out of the document flow */
+  top: 200px; /* moves the element below 200px from its initial position in main section, attribute for "position" property */
+}
+
+#hero-content h1 {
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  color: white;
+  margin: 0;
+  font-size: 50px;
+}
+
+#hero-content p {
+  color: white;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 32px;
+}
+
+#hero-content a {
+  background-color: rgb(251, 247, 0);
+  padding: 12px 24px;
+  font-size: 24px;
+  text-decoration: none;
+  color: black;
+  border-radius: 8px;
+  box-shadow: 2px 4px 8px rgb(68, 67, 67);
+  font-weight: bold;
+}
+
+#hero-content a:hover {
+  background-color: rgb(251, 238, 0);
+}
+
+#highlights {
+  padding: 24px; /*to avoid margin collapsing between parent section(higlights) and its children h2 and p 
+   as the content of section will be inside padding */
+
+  background: linear-gradient(
+    0deg,
+    rgb(227, 255, 253),
+    rgb(202, 243, 240)
+  ); /* more engaging look than simple bg color */
+}
+
+#destinations {
+  display: flex; /*flex container for image items */
+
+  width: 90%; /* flex_c takes the entire space and we do not want that, for normal elements width generally corresponds to parent element,
+   like here for <ul id="destinations">, <section id="highlights">, thus reducing the width of our flex_c*/
+
+  margin: auto; /* to center element after setting the width as we normally do */
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+#highlights h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  color: rgb(59, 65, 64);
+  margin: 24px 0;
+}
+
+.destination {
+  margin: 0 20px;
+  text-transform: uppercase; /* will get inherited by p */
+}
+
+.destination img {
+  height: 200px;
+  /* width: 250px; will not use this bc the the unused space will be dynamically inc or dec as flex container is also build dynamically(% value) */
+  width: 100%; /*each item in flex container is told to use entire space, but here three elements so equal one-third space be used...*/
+
+  box-shadow: 2px 4px 8px rgb(68, 67, 67);
+  border-radius: 10px;
+  object-fit: cover; /* so that images are not squashed in */
+}
+
+.destination p {
+  text-align: center;
+  font-size: 24px;
+  color: rgb(124, 123, 123);
+  margin: 20px 0;
+}
+
+.destination strong {
+  color: rgb(0, 160, 117);
+}

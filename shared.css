@@ -1,0 +1,82 @@
+body {
+  font-family: "Quicksand", sans-serif;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex; /* aligns the direct child elements in this container by default in a row ; flex is used for 1-d layouts */
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  position: absolute; /*positioning the header element out of the document flow
+   to get the main section bg image behind it(this causes header's shrinkage)*/
+
+  top: 0; /*  put here to get it to extreme left and top */
+  left: 0; /* altho its not required here bc header is the first element in our document flow */
+
+  width: 100%; /* to make the header element use the entire width available  of its initial containing block (viewport) depending on the context,
+   bc after using above prop it might get compressed */
+
+  box-sizing: border-box; /*allows you to include the padding and border within the specified viewport element's width and height,
+    keeping the overall size of the element consistent,  With border-box, an element's width and height include its content, padding, and border*/
+}
+
+#page-logo a {
+  padding: 10px;
+  font-family: "Oleo Script", sans-serif;
+  color: rgb(245, 243, 160);
+  font-size: 50px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgb(0, 0, 0);
+}
+
+header ul {
+  display: flex;
+}
+
+header li {
+  margin-left: 20px;
+}
+
+header a {
+  color: rgb(255, 251, 0);
+  text-decoration: none;
+  font-size: 20px;
+  padding: 12px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+header nav a:hover {
+  color: rgb(77, 77, 77);
+  background-color: rgb(255, 251, 0);
+}
+
+footer {
+  background: linear-gradient(70deg, rgb(24, 24, 24), rgb(25, 29, 29));
+  padding: 32px 0; /* generally prefer padding of the container element to add vertical margins in children elements */
+}
+
+footer ul {
+  display: flex;
+  justify-content: center;
+}
+
+footer li {
+  height: 80px;
+  width: 80px;
+  margin: 0 50px;
+}
+
+footer img {
+  /* will inherit 100% of height and width values from our <li> element which will act as parent for <img. items */
+  width: 100%;
+  height: 100%;
+}

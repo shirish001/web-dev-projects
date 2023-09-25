@@ -1,0 +1,74 @@
+#page-logo a {
+  color: rgb(183, 230, 235);
+}
+
+header a {
+  color: rgb(183, 230, 235);
+}
+
+header nav a:hover {
+  background-color: rgb(183, 230, 235);
+  color: rgb(59, 59, 59);
+}
+
+header {
+  position: static; /* default property so that we can overwrite the absolute prop in shared.css
+     and get the header element in docu flow */
+}
+
+body {
+  background: linear-gradient(30deg, rgb(77, 77, 77), rgb(58, 58, 58));
+  color: rgb(68, 68, 68);
+}
+
+main li img {
+  width: 300px;
+  height: 280px;
+  object-fit: cover;
+}
+
+main ul {
+  width: 1200px;
+  margin: 0 auto 48px auto;
+  display: grid; /* apply grid in conatiner element; used for 2-d layouts(colmn and row both) */
+  grid-template-columns: 1fr 1fr; /* 2 columns having equal partition on width */
+  gap: 18px; /* gap b/w two rows and two columns */
+}
+
+main ul li:nth-of-type(3) {
+  grid-column: 1 / span 2; /* here 1 is the starting column index(present in grid layout) for the grid item and
+   span 2 means the grid item should span across 2 columns*/
+}
+main li {
+  display: flex;
+  background-color: white;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  overflow: hidden; /* image surpasses the container border and we do not get round corners, hence we apply this */
+}
+
+.item-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item-content h2 {
+  margin: 0;
+}
+
+.actions {
+  text-align: right;
+}
+
+.actions a {
+  text-decoration: none;
+  color: rgb(22, 228, 211);
+  padding: 6px;
+  border-radius: 5px;
+}
+
+.actions a:hover {
+  background-color: rgb(235, 253, 255);
+}
